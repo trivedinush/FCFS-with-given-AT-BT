@@ -12,9 +12,9 @@ public class ReaderWriter {
                 if(readcount==1)
                     wrt.acquire();
                 S.release();
-                System.out.println(Thread.currentThread()+" karan started Reading");
+                System.out.println(Thread.currentThread()+" 1 started Reading");
                 Thread.sleep(1000);
-                System.out.println(Thread.currentThread()+"karan is finish Reading");
+                System.out.println(Thread.currentThread()+"1 is finish Reading");
                 S.acquire();
                 readcount--;
                 if(readcount==0)
@@ -30,9 +30,9 @@ public class ReaderWriter {
             public void run(){
                 try{
                     wrt.acquire();
-                    System.out.println(Thread.currentThread()+"Arjun started Writing");
+                    System.out.println(Thread.currentThread()+"2 started Writing");
                     Thread.sleep(1000);
-                    System.out.println(Thread.currentThread()+" Arjun is finish Writing");
+                    System.out.println(Thread.currentThread()+" 2 is finish Writing");
                     wrt.release();
                 }
                 catch(Exception e){
